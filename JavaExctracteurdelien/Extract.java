@@ -38,8 +38,8 @@ StringBuffer buffer = new StringBuffer();
 
               while(i< buffer.lastIndexOf("/a>") + 3)
               {
-              writer.println(buffer.substring(buffer.indexOf("<a",i), buffer.indexOf("/a>",i) + 3));            
-              i = buffer.indexOf("/a>",i) + 3;
+              writer.println(buffer.substring(buffer.indexOf("<a",i),i=buffer.indexOf("/a>",i) + 3));
+            //  i = buffer.indexOf("/a>",i) + 3;
               System.out.println(i);
             //  System.out.println(buffer.indexOf("/a>",));
             }
