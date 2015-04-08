@@ -35,13 +35,12 @@ StringBuffer buffer = new StringBuffer();
                      new BufferedWriter(
                         new FileWriter( FileDestination) ) );
 
-              while(i <= buffer.indexOf("/a>",i) )
-              {
-              writer.println(buffer.substring(buffer.indexOf("<a",i),i = buffer.indexOf("/a>",i) + 3));
 
-              System.out.println(i);
-            }
-            writer.close();
+              while(i <= buffer.lastIndexOf("/a>") )
+              writer.println(buffer.substring(buffer.indexOf("<a",i),i=buffer.indexOf("/a>",i) + 3));
+
+
+           writer.close();
 
      }
      catch(IOException e)
