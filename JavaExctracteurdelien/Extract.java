@@ -35,10 +35,8 @@ StringBuffer buffer = new StringBuffer();
                      new BufferedWriter(
                         new FileWriter( FileDestination) ) );
 
-
-              while(i <= buffer.lastIndexOf("/a>") )
+              while(i < buffer.lastIndexOf("/a>") )
               writer.println(buffer.substring(buffer.indexOf("<a",i),i=buffer.indexOf("/a>",i) + 3));
-
 
            writer.close();
 
@@ -53,6 +51,9 @@ StringBuffer buffer = new StringBuffer();
    public static void main(String []args)
    {
      Extract tracteur = new Extract();
+     if(args.length ==2)
      tracteur.Read(args[0],args[1]);
+     else
+     System.out.println("Je veux 2 Parametre mautadine que tu es dur de comprenure");
    }
 }
