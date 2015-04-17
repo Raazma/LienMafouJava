@@ -6,8 +6,14 @@ StringBuffer buffer = new StringBuffer();
 
    public void Read(String File,String FileDestination)
    {
+    File f = new File(File);
+    
+      if(f.exists())
+      {
       try
       {
+      
+      
        BufferedReader reader =  reader = new BufferedReader(
                new FileReader(File) );
         String line;
@@ -22,6 +28,11 @@ StringBuffer buffer = new StringBuffer();
        {
        }
        Extraction(buffer,FileDestination);
+       }
+       else
+       {
+         System.out.println("Fichier Introuble écrit comme du monde");
+       }
 
    }
 
@@ -36,7 +47,7 @@ StringBuffer buffer = new StringBuffer();
                         new FileWriter( FileDestination) ) );
 
               while(i < buffer.lastIndexOf("/a>") )
-              writer.println(buffer.substring(buffer.indexOf("<a",i),i=buffer.indexOf("/a>",i) + 3));
+              writer.println(buffer.substring(buffer.indexOf("<a ",i),i=buffer.indexOf("/a>",i) + 3));
 
            writer.close();
 
